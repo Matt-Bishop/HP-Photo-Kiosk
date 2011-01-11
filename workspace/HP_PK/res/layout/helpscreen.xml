@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+android:id="@+id/widget62"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<TextView
+android:id="@+id/widget34"
+android:layout_width="300px"
+android:layout_height="wrap_content"
+android:background="#ffffffff"
+android:text="To connect to the HP PhotoKiosk select connect via Bluetooth on the PhotoKiosk. Follow the on-screen prompts, until the kiosk is in discoverable mode. Once the Kiosk is in Discoverable mode select connect from the main menu. Allow the phone to connect and upload your photos to be printed."
+android:typeface="monospace"
+android:textColor="#ff000000"
+android:layout_centerVertical="true"
+android:layout_alignLeft="@+id/help_back"
+>
+</TextView>
+<ImageButton
+android:id="@+id/help_back"
+android:layout_width="300px"
+android:layout_height="60px"
+android:src="@drawable/hp_back_button"
+android:layout_alignParentBottom="true"
+android:layout_centerHorizontal="true"
+>
+</ImageButton>
+</RelativeLayout>

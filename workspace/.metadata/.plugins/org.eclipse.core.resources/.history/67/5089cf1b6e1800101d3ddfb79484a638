@@ -1,0 +1,29 @@
+package hp.pk;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.*;
+
+public class Uploading extends Activity
+{
+	private ImageButton cBtn;
+	
+	 @Override
+	 public void onCreate(Bundle savedInstanceState)
+	 {
+		 super.onCreate(savedInstanceState);
+		 setContentView(R.layout.uploading);
+		 	 
+		 cBtn = (ImageButton) findViewById(R.id.up_cancel);
+		 
+		 this.cBtn.setOnClickListener(new Button.OnClickListener()
+		 {
+		     public void onClick(View v)
+		     {
+		    		finish(); 
+		     }
+		 });
+	 }
+}
+	 

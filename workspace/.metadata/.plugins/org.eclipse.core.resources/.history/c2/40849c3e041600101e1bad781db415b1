@@ -1,0 +1,85 @@
+package hp.pk;
+
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+import android.widget.ImageView;
+
+public class ImageAdapter extends BaseAdapter {
+	private String[] selectedIMGs;
+	private Context myContext;
+	public ImageAdapter(Context c,String[] IMGs,int num)
+	{
+		this.myContext=(Context) c;
+		selectedIMGs= new String[IMGs.length];
+		selectedIMGs= IMGs;
+	}
+		
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		//return picNum;
+		return selectedIMGs.length;
+		//return this.myImageIds.length;
+	}
+
+	@Override
+	public Object getItem(int position) {
+		// TODO Auto-generated method stub
+		return position;
+	}
+
+	@Override
+	public long getItemId(int position) {
+		// TODO Auto-generated method stub
+		return position;
+	}
+	
+	 public float getScale(boolean focused, int offset) {
+         /* Formula: 1 / (2 ^ offset) */
+     return Math.max(0, 1.0f / (float)Math.pow(2, Math.abs(offset)));
+	 }
+	 
+	 public View getView(int position, View convertView, ViewGroup parent) {
+         ImageView i = new ImageView(this.myContext);
+         BitmapFactory.Options options = new BitmapFactory.Options();
+         options.inSampleSize = 2;
+         options.inPurgeable=true;
+         options.inScaled=true;
+         Bitmap myBitmap = BitmapFactory.decodeFile(selectedIMGs[position],options);
+         
+        // Bitmap myBitmap = BitmapFactory.decodeFile("/sdcard/myimages/raindash.jpg");
+         System.out.println("Bitmap Grabbed ="+ myBitmap);
+		 i.setImageBitmap(myBitmap);
+        // i.setImageResource(this.myImageIds[position]);
+         /* Image should be scaled as width/height are set. */
+         i.setScaleType(ImageView.ScaleType.FIT_XY);
+         /* Set the Width/Height of the ImageView. */
+         i.setLayoutParams(new Gallery.LayoutParams(150, 150));
+         return i;
+     }
+	/*@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		// TODO Auto-generated method stub
+		ImageView i = new ImageView(this.myContext);
+			//for(int count=0;count<selectedIMGs.length;count++)
+    	 	//{
+    	 		//File imageFile = new File(selectedIMGs[count].toString());
+    	 		//if(imageFile.exists())
+    	 		//{
+    	 			//Bitmap myBitmap = BitmapFactory.decodeFile(selectedIMGs[position].toString());
+    	 			Bitmap myBitmap = BitmapFactory.decodeFile("/sdcard/1");
+
+    	 			i.setImageBitmap(myBitmap);
+       	 		//}
+    	 	//}
+			i.setScaleType(ImageView.ScaleType.FIT_CENTER);
+			i.setLayoutParams(new Gallery.LayoutParams(150,150));
+		return i;
+	}*/
+
+}
