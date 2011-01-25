@@ -1,0 +1,111 @@
+package hp.pk;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore.Images.Media;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Gallery;
+import android.widget.ImageButton;
+
+public class iGallery extends Activity{
+	
+	
+	private ImageButton cBtn;
+	private ImageButton addBtn;
+	private Uri chosenImageUri;
+	private Gallery gallery;
+	private Bitmap mBitmap;
+	
+	private int picNum = 0;
+	
+	private String[] selectedIMGs = {" "," "," "};
+	private Drawable[] drawIMGs = new Drawable[0];
+	
+	 @Override
+	 public void onCreate(Bundle savedInstanceState) {
+		 super.onCreate(savedInstanceState);
+		 setContentView(R.layout.gallery);
+		 
+		 Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
+		 photoPickerIntent.setType("image/*");
+		 startActivityForResult(photoPickerIntent, 1);
+		 
+		// selectedIMGs[picNum]=chosenImageUri.getPath();
+		 System.out.println("You have "+selectedIMGs.length+" Selected");
+		for(int count=0;count<picNum;count++)
+		 {
+			 System.out.println("Images Selected are : "+selectedIMGs[picNum]);
+		 }
+		 
+		// gallery = (Gallery) findViewById(R.id.igallery);
+		// gallery.setAdapter(new ImageAdp(this));
+		 
+		 
+		 cBtn = (ImageButton) findViewById(R.id.uploadcancel);
+		 
+		 this.cBtn.setOnClickListener(new Button.OnClickListener(){
+		     public void onClick(View v){
+		    	 //startActivity(new Intent(iGallery.this,MainMenu.class));
+		    	 finish();
+		    	  }
+		      });
+		 
+		 addBtn = (ImageButton) findViewById(R.id.add);
+		 this.addBtn.setOnClickListener(new Button.OnClickListener(){
+		     public void onClick(View v){
+		    	 	picNum++;
+		    	 	Intent photoPickerIntent = new Intent(Intent.ACTION_GET_CONTENT);
+		    	 	photoPickerIntent.setType("image/*");
+		    	 	startActivityForResult(photoPickerIntent, 1);
+		    	  }
+		      });
+		 
+	 }
+	 
+	 protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	 {
+	     super.onActivityResult(requestCode, resultCode, data);
+	     if (resultCode == RESULT_OK)
+	     {
+	         chosenImageUri = data.getData();
+
+	       /*  mBitmap = null;
+	         try {
+				mBitmap = Media.getBitmap(this.getContentResolver(), chosenImageUri);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	         }
+	 }*/
+	   }
+	 	if(chosenImageUri ==null)
+			System.out.println("No Data Found");
+		else
+		{
+			System.out.println("Data Found");
+			selectedIMGs[picNum]= data.getData().getPath().toString();
+			System.out.println("Path to Image = "+data.getData().getPath().toString());
+			System.out.println("Image Number is "+picNum);
+		}
+	 	
+  }
+	 
+}
+
+
+
+
+

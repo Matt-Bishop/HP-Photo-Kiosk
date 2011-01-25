@@ -1,0 +1,7 @@
+package hp.pk;
+
+import android.widget.SpinnerAdapter;
+
+public class ImageAdapter implements SpinnerAdapter {
+
+}

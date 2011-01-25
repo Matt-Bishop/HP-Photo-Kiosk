@@ -19,7 +19,7 @@ public class iGallery extends Activity
 	private Gallery gallery;
 	private ImageAdapter ImgAdp;
 	private int picNum = -1;
-	/*Decide On Initial Array length or use something  dynamic 
+	/*Decide On Initial Array length or use something dynamic 
 	 * (probably would be better than my resize/copy), memory
 	 * may become a problem with either solution*/
 	private String[] selectedIMGs = new String[30];
