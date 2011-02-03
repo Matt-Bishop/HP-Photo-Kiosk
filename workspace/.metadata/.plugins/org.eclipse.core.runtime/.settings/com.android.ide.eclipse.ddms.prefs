@@ -1,4 +1,4 @@
-#Thu Jan 06 19:12:48 PST 2011
+#Wed Jan 05 23:16:24 PST 2011
 threadPanel.stack.col0=130
 emulatorControl.waypoint.desc=107
 emulatorControl.track.first=122
@@ -20,7 +20,7 @@ allocPanel.Col4=45
 allocPanel.stack.col0=130
 emulatorControl.waypoint.latitude=76
 allocPanel.Col3=45
-com.android.ide.eclipse.ddms.adb=C\:\\Users\\Default.Default-PC\\Downloads\\android-sdk_r07-windows\\android-sdk-windows\\tools\\adb.exe
+com.android.ide.eclipse.ddms.adb=C\:\\Users\\Matt Bishop\\Desktop\\android-sdk_r07-windows\\android-sdk-windows\\tools\\adb.exe
 allocPanel.Col2=32
 com.android.ide.eclipse.ddms.explorer.size=51
 allocPanel.Col1=94

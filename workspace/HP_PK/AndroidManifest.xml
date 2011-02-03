@@ -3,7 +3,7 @@
       package="hp.pk"
       android:versionCode="1"
       android:versionName="1.0">
-    <application android:icon="@drawable/icon" android:label="@string/app_name">
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
         <activity android:name=".HP_PK" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -11,7 +11,7 @@
             </intent-filter>
         </activity>
 
-<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    
 
 <activity android:name=".MainMenu"></activity>
 <activity android:name=".Connecting"></activity>
@@ -20,6 +20,5 @@
 
 </application>
     <uses-sdk android:minSdkVersion="7" />
-
 
 </manifest> 

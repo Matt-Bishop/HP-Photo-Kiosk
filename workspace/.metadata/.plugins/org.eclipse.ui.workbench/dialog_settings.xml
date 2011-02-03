@@ -4,13 +4,13 @@
 		<item value="15" key="DIALOG_Y_ORIGIN"/>
 		<item value="74" key="DIALOG_X_ORIGIN"/>
 	</section>
+	<section name="ZipFileExportWizard">
+	</section>
 	<section name="NewWizardAction">
 		<item value="com.android.ide.eclipse.editors.wizards.NewXmlFileWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="com.android.ide.eclipse.wizards.category"/>
 		</list>
-	</section>
-	<section name="ZipFileExportWizard">
 	</section>
 	<section name="ImportExportAction">
 		<item value="com.android.ide.eclipse.adt.project.ExportWizard" key="ImportExportPage.STORE_SELECTED_EXPORT_WIZARD_ID"/>
